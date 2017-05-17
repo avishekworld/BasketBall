@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score : MonoBehaviour {
+public class ScoreKeeper : MonoBehaviour {
 	int score = 0 ;
-	void OnCollisionEnter(Collision collison){
-		score++;
+
+	public void incrementScore(int point){
+		score += point;
 		Debug.Log ("Score : " + score);
 	}
 }

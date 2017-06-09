@@ -7,9 +7,18 @@ public class LevelManager : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			int currentSceneIndex = SceneManager.GetActiveScene ().buildIndex;
-			SceneManager.LoadScene (currentSceneIndex + 1);
+			LoadNextScene ();
 		}
 
+	}
+
+	public void LoadNextScene(){
+		int currentSceneIndex = SceneManager.GetActiveScene ().buildIndex;
+		SceneManager.LoadScene (currentSceneIndex + 1);
+	}
+
+	public void LoadPreviousScene(){
+		int currentSceneIndex = SceneManager.GetActiveScene ().buildIndex;
+		SceneManager.LoadScene (currentSceneIndex - 1);
 	}
 }

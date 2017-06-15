@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			LoadNextScene ();
-		}
+	public double timeRemaining = 5.0;
 
+	void Update () {
+		if (timeRemaining > 0) {
+			timeRemaining -= Time.deltaTime;
+			if (timeRemaining < 0) {
+				LoadNextScene ();
+			}
+		}
 	}
 
 	public void LoadNextScene(){

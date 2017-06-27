@@ -11,5 +11,7 @@ public class ScoreKeeper : MonoBehaviour {
 
 	public void incrementScore(int point){
 		score += point;
+		AudioSource audioSource = GetComponent<AudioSource> ();
+		audioSource.Play ();
 	}
 }
